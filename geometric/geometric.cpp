@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -23,6 +24,6 @@ int main() {
     double p, m;
     cin >> n >> k >> p >> m;
     double result = findDefectiveProbability(p, m, n, k);
-    cout << result;
+    cout << fixed << setprecision(3) << result;
     return 0;
 }

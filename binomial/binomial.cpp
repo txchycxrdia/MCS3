@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -33,6 +34,6 @@ int main() {
     double p;
     cin >> n >> k >> p;
     double result = probabilityAtLeastK(n, k, p);
-    cout << result;
+    cout << fixed << setprecision(3) << result;
     return 0;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 
 using namespace std;
 
@@ -19,6 +20,7 @@ double calculateOptimalProbability(int lambda, int k1, int k2) {
     double probability = 0.0;
     for (int k = k1; k <= k2; ++k) {
         probability += poissonProbability(lambda, k);
+        if(probability > 1) probability = 1;
     }
     return probability;
 }
@@ -27,6 +29,6 @@ int main() {
     int lambda, k1, k2;
     cin >> lambda >> k1 >> k2;
     double result = calculateOptimalProbability(lambda, k1, k2);
-    cout << result;
+    cout << fixed << setprecision(3) << result;
     return 0;
 }
